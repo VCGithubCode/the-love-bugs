@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nah#_pet=6%pt0zkuuve_+dhp1&v0euo8w=+@7v*89t77l()&2'
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+CLOUDINARY_API = os.environ.get('CLOUDINARY_API')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '8000-vcgithubcod-thelovebugs-q43umjyfc9q.ws-eu108.gitpod.io']
 
 
 # Application definition
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'allauth',
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'home',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -151,7 +157,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
