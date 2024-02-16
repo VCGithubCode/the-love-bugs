@@ -2,6 +2,8 @@
 
 import os
 from pathlib import Path
+import dj_database_url
+
 from dotenv import load_dotenv
 
 
@@ -22,9 +24,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'miles-and-smiles-03ded9dd0f57.herokuapp.com', 'localhost']
 
 # CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-qmbdp8tkgn4.ws-eu108.gitpod.io'] # using locally mm/ do not touch
 # Application definition
@@ -104,12 +106,19 @@ WSGI_APPLICATION = 'miles_and_smiles.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+
 
 
 # Password validation
