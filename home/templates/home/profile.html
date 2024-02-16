@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+  {% with active_page='profile' %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}
+
 {% block content %}
 
 <h1 class="display-4 text-success"> This is the user profile page </h1>

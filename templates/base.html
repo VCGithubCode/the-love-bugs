@@ -32,42 +32,38 @@
   <body>
     <header class="container-fluid fixed-top"></header>
 
-
     {% block page_header %}
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}" >Miles And Smiles</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link mx-2" href="{% url 'profile' %}">Profile</a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'home' %}">Miles And Smiles</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item {% if active_page == 'home' %}active{% endif %}">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+  
+          {% if user.is_authenticated %}
+          <li class="nav-item {% if active_page == 'profile' %}active{% endif %}">
+            <a class="nav-link mx-2" href="{% url 'profile' %}">Profile</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link mx-2 {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Sign Out</a>
           </li>
-         
           {% else %}
           <li class="nav-item">
-            <a class="nav-link mx-2 {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
+            <a class="nav-link mx-2 {% if active_page == 'register' %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
+            <a class="nav-link mx-2 {% if active_page == 'login' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
           </li>
           {% endif %}
-
-
-          </ul>
-        </div>
-      </nav>
-
-    {% endblock %}
+        </ul>
+      </div>
+    </nav>
+  {% endblock %}
+  
 
     {% block content %}
     {% endblock %}
