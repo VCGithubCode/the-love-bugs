@@ -28,7 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'miles-and-smiles-03ded9dd0f57.herokuapp.com', 'localhost']
 
-
+# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-qmbdp8tkgn4.ws-eu108.gitpod.io'] # using locally mm/ do not touch
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'miles_and_smiles.urls'
@@ -166,3 +167,4 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# AUTH_USER_MODEL = 'home.CustomUser' # do not delete
