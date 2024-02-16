@@ -1,1 +1,1 @@
-web: gunicorn miles_and_smiles.wsgi
+gunicorn miles_and_smiles.wsgi
