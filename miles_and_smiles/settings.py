@@ -32,6 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '8000-vcgithubcod-thelovebugs-q43umjyfc9q.ws-eu108.gitpod.io']
 
+SECRET_KEY = 'your-secret-key-here'
+
 
 # Application definition
 
