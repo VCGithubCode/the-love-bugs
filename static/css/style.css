@@ -1,3 +1,18 @@
-body {
-    background-color: red;
+/* Personal style added to application */
+html, body {
+  height: 100%;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  background-color: var(--white);
+}
+
+h1 {
+    background-color: black;
+  }
