@@ -12,10 +12,11 @@
 
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+
     {% endblock %}
 
     {% block extra_css %}
-        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
     {% endblock %}
 
     {% block corejs %}
@@ -44,7 +45,7 @@
               <li class="nav-item {% if active_page == 'home' %}active{% endif %}">
                 <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
               </li>
-      
+            
               {% if user.is_authenticated %}
               <li class="nav-item {% if active_page == 'profile' %}active{% endif %}">
                 <a class="nav-link mx-2" href="{% url 'profile' %}">Profile</a>
@@ -60,6 +61,16 @@
                 <a class="nav-link mx-2 {% if active_page == 'login' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
               </li>
               {% endif %}
+
+              <li class="nav-item {% if active_page == 'about' %}active{% endif %}">
+                <a class="nav-link mx-2" href="{% url 'about' %}">About</a>
+              </li>
+
+              <li class="nav-item {% if active_page == 'contact' %}active{% endif %}">
+                <a class="nav-link mx-2" href="{% url 'contact' %}">contact Us</a>
+              </li>
+
+              
             </ul>
           </div>
         </nav>

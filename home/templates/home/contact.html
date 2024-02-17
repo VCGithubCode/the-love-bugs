@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/about_contact.css' %}">
+{% endblock %}
+
+{% block page_header %}
+{% with active_page='contact' %}
+{{ block.super }}
+{% endwith %}
+{% endblock %}
 
 {% block content %}
 
-
-
-<!-- Fernando please add the code here ignore the nav and footer  -->
-<link rel="stylesheet" href="static/css/style_2.css">
 <body class="Contact">
     <div class="wrapper"> 
         <h2>Contact us</h2> 
