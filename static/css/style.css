@@ -1,41 +1,15 @@
-/* Personal style added to application */
-
-html, body {
-  height: 100%;
-}
+Personal style added to application
 
 body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-h1 {
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
-
-/* Header */
-header {
-  background-color: var(--bs-success-border-subtle);
-}
-
-/* Footer */
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   
-}
-#footer {
-  position: relative; 
-}
-
-#footer-content {
-  width: 100%;
-  background-color: var(--bs-gray-400);
-}
-
-
+  main {
+    flex: 1;
+  }
+  
+  footer {
+    margin-top: auto;
+  }
