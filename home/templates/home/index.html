@@ -3,14 +3,45 @@
 
 
 {% block page_header %}
-  {% with active_page='home' %}
-    {{ block.super }}
-  {% endwith %}
+{% with active_page='home' %}
+{{ block.super }}
+{% endwith %}
 {% endblock %}
 
 
 {% block content %}
 
 <h1 class="display-4 text-success"> It Works </h1>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Your distance location</h5>
+        <a href="#">
+          <img src="{% static '/images/earth.svg' %}" alt="map" class="icons" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Count down</h5>
+        <a href="#">
+          <img src="{% static '/images/time.svg' %}" alt="time" class="icons" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-{% endblock %} 
+{% endblock %}
