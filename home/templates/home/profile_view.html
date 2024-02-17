@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% if profile %}
+        <h1>User Profile</h1>
+        <p>Name One: {{ profile.name_one }}</p>
+        <p>Name Two: {{ profile.name_two }}</p>
+        <p>Location One: {{ profile.location_one }}</p>
+        <p>Location Two: {{ profile.location_two }}</p>
+        <p>Status: {{ profile.status }}</p>
+    {% else %}
+        <p>User profile not found.</p>
+    {% endif %}
+{% endblock %}
