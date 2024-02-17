@@ -14,3 +14,6 @@ class CustomUser(AbstractUser):
     name_one = models.CharField(max_length=30, blank=True, null=True)
     name_two = models.CharField(max_length=30, blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, blank=True, null=True)
+
+    class Meta:
+        abstract = True
