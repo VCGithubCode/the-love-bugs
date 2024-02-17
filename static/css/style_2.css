@@ -1,0 +1,440 @@
+/*--------Geral Css --------*/
+* {
+    font-family: Nunito, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+/*--------About Page --------*/
+
+
+.text-blk {
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+line-height: 25px;
+}
+
+.responsive-cell-block {
+min-height: 75px;
+}
+
+.responsive-container-block {
+min-height: 75px;
+height: fit-content;
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0px;
+margin-left: auto;
+justify-content: space-evenly;
+gap: 50px;
+}
+
+
+
+.outer-container {
+padding-top: 10px;
+padding-bottom: 10px;
+background-color: rgb(244, 252, 255);
+}
+
+.inner-container {
+max-width: 1320px;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+margin-right: auto;
+margin-bottom: 50px;
+margin-left: auto;
+}
+
+.section-head-text {
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+font-size: 35px;
+font-weight: 700;
+line-height: 48px;
+color: rgb(0, 135, 177);
+margin: 0 0 10px 0;
+}
+
+.section-subhead-text {
+font-size: 25px;
+color: rgb(244, 52, 52);
+line-height: 35px;
+max-width: 470px;
+text-align: center;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 60px;
+margin-left: 0px;
+}
+
+.img-wrapper {
+width: 90%;
+padding-bottom: 20px;
+}
+
+.team-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.social-media-links {
+width: 125px;
+display: flex;
+justify-content: space-evenly;
+text-decoration: none;
+}
+
+.fa-brands, .fab {
+    color: black;
+}
+
+.fa-brands:hover, .fab:hover {
+    border-radius: 50%;
+    background-color: red;
+} 
+
+.name {
+font-size: 25px;
+font-weight: 700;
+color: rgb(102, 102, 102);
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+}
+
+.position {
+font-size: 25px;
+font-weight: 700;
+text-align: center;
+color: rgb(0, 135, 177);
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 20px;
+}
+
+.team-img {
+width: 90%;
+height: 90%;
+border-radius: 50%;
+}
+
+.team-card-container {
+width: 280px;
+margin: 0 0 40px 0;
+}
+
+/*--------Contact Page --------*/
+body {
+    font-family: Roboto, sans-serif;
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+}
+h1, h2 {
+    font-weight: 700;
+    color: #fff;
+    font-weight: 700;
+    font-size: 4em;
+    margin: 0;
+    padding: 0 20px;
+}
+.form-overlay {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 0;
+    background: #000;
+    transition: background 1s, opacity 0.4s, width 0s 0.4s;
+}
+.show-form-overlay .form-overlay {
+    width: 100%;
+    opacity: 0.7;
+    z-index: 999;
+    transition: background 1s, opacity 0.4s, width 0s;
+}
+.show-form-overlay.form-submitted .form-overlay {
+    background: #119da4;
+    transition: background 0.6s;
+}
+#form-container {
+    cursor: pointer;
+    color: #fff;
+    z-index: 1000;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 5vh;
+    background-color: #f72f4e;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 60px;
+    max-width: 60px;
+    height: 60px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.2s 0.45s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+}
+#form-container.expand {
+    cursor: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);
+    border-radius: 0;
+    width: 70%;
+    height: 610px;
+    max-width: 610px;
+    padding: 0;
+    transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;
+}
+#form-close {
+    cursor: pointer;
+}
+.icon::before {
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 60px;
+    display: block;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon:hover::before {
+    animation: wiggle 0.1s linear infinite;
+}
+.fa-pencil::before {
+    display: block;
+}
+.fa-close::before {
+    display: none;
+}
+.expand.fa-pencil::before {
+    display: none;
+}
+.expand.fa-close::before {
+    display: block;
+    animation: none;
+}
+#form-content {
+    font-family: Roboto, sans-serif;
+    transform: translateY(150%);
+    width: 100%;
+    opacity: 0;
+    text-align: left;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;
+}
+#form-content.expand {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s, opacity 0s;
+}
+#form-content form {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px 20px 20px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+#form-head {
+    font-size: 100%;
+    padding: 0;
+    margin: 0 20px;
+    color: #fff;
+    text-align: center;
+    transition: all 0.8s 0.6s;
+}
+#form-head h1, #form-head p {
+    padding: 0;
+    margin: 0;
+}
+#form-head .pre {
+    display: block;
+}
+#form-head .post {
+    display: none;
+}
+.form-submitted#form-head {
+    transform: translateY(250%);
+}
+.form-submitted#form-head .pre {
+    display: none;
+}
+.form-submitted#form-head .post {
+    display: block;
+}
+.input {
+    background: rgba(0, 0, 0, 0.2);
+    display: block;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-width: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transform: translateX(0);
+}
+::-webkit-input-placeholder {
+   /* Safari, Chrome and Opera */
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 90%;
+}
+/* Firefox 18- */
+:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 90%;
+}
+/* Firefox 19+ */
+::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 90%;
+}
+/* IE 10+ */
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 90%;
+}
+/* Edge */
+::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 90%;
+}
+/* Default */
+:placeholder-shown {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 90%;
+}
+input, select, textarea {
+    color: #fff;
+}
+.input.message {
+    resize: none;
+    height: 150px;
+    padding: 10px;
+}
+.input.submit {
+    background-color: #fff;
+    color: #f72f4e;
+    font-size: 120%;
+    height: 80px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s, transform 0s 0.6s;
+}
+.input.submit:active {
+    margin-top: 15px;
+    box-shadow: 0 0 rgba(0, 0, 0, 0.5);
+}
+.input.form-error {
+    animation: error 0.8s ease;
+    background: rgba(0, 0, 0, 0.7);
+}
+select option {
+    background: #f72f4e;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+select option:disabled {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 90%;
+}
+.input {
+    transition: transform 0s 1s;
+}
+.form-submitted .input {
+    transform: translateX(150%);
+    opacity: 0;
+    transition: all 0.5s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+.form-submitted .input:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.form-submitted .input:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.form-submitted .input:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.form-submitted .input:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.form-submitted .input:nth-child(5) {
+    transition-delay: 0.5s;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+@media (max-width: 600px) {
+    #form-container.expand {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        overflow: initial;
+        overflow-x: hidden;
+        bottom: 0;
+   }
+    h1 {
+        font-size: 300%;
+   }
+    .icon:hover::before {
+        animation: none;
+   }
+    .form-overlay {
+        display: none;
+        transition: none;
+   }
+}
+@keyframes error {
+    0%, 100% {
+        transform: translateX(0);
+   }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-6px);
+   }
+    20%, 40%, 60%, 80% {
+        transform: translateX(6px);
+   }
+}
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-15deg);
+   }
+    50% {
+        transform: rotate(15deg);
+   }
+}
+
+/*--------Responsive css --------*/
+
+@media (max-width: 500px) {
+.outer-container {
+    padding: 10px 20px 10px 20px;
+}
+
+.section-head-text {
+    text-align: center;
+}
+}
+
+
+
+  
