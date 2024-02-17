@@ -21,6 +21,9 @@ def profile_view(request):
 
 @login_required
 def profile(request):
+    if request.user.profile:
+        return redirect('profile_view')
+
     if request.method == 'POST':
         form = ProfileForm(request.POST)
         if form.is_valid():
@@ -31,4 +34,17 @@ def profile(request):
     else:
         form = ProfileForm()
     return render(request, 'home/profile.html', {'form': form})
+
+# @login_required
+# def profile(request):
+#     if request.method == 'POST':
+#         form = ProfileForm(request.POST)
+#         if form.is_valid():
+#             profile = form.save(commit=False)
+#             profile.user = request.user
+#             profile.save()
+#             return redirect('profile_view')
+#     else:
+#         form = ProfileForm()
+#     return render(request, 'home/profile.html', {'form': form})
 
