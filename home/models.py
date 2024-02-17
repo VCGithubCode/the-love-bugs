@@ -15,3 +15,4 @@ class Profile(models.Model):
     location_one = models.CharField(max_length=100, blank=True)
     location_two = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, blank=True, null=True)
+    # picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
