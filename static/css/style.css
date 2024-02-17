@@ -1,4 +1,5 @@
 /* Personal style added to application */
+
 html, body {
   height: 100%;
 }
@@ -10,9 +11,31 @@ body {
 
 main {
   flex: 1 0 auto;
-  background-color: var(--white);
 }
 
 h1 {
     background-color: black;
   }
+
+/* Header */
+header {
+  background-color: var(--bs-success-border-subtle);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+#footer {
+  position: relative; 
+}
+
+#footer-content {
+  width: 100%;
+  background-color: var(--bs-gray-400);
+}
+
+
