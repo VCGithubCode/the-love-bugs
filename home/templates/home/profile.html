@@ -2,36 +2,40 @@
 {% load static %}
 
 {% block page_header %}
-  {% with active_page='profile' %}
-    {{ block.super }}
-  {% endwith %}
+{% with active_page='profile' %}
+{{ block.super }}
+{% endwith %}
 {% endblock %}
 
 {% block content %}
 
 <h1 class="display-4 text-success"> Create your profile </h1>
-  <form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="name_one">Name:</label>
-      {{ form.name_one }}
-    </div>
-    <div class="form-group">
-      <label for="name_two">Partner name:</label>
-      {{ form.name_two }}
-    </div>
-    <div class="form-group">
-      <label for="location_one">Location:</label>
-      {{ form.location_one }}
-    </div>
-    <div class="form-group">
-      <label for="location_two">Partner location:</label>
-      {{ form.location_two }}
-    </div>
-    <div>
-      <label for="status">Status:</label>
-      {{ form.status }}
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="name_one">Name:</label>
+    {{ form.name_one }}
   </div>
-    <button type="submit">Save</button>
-  </form>
+  <div class="form-group">
+    <label for="name_two">Partner name:</label>
+    {{ form.name_two }}
+  </div>
+  <div class="form-group">
+    <label for="location_one">Location:</label>
+    {{ form.location_one }}
+  </div>
+  <div class="form-group">
+    <label for="location_two">Partner location:</label>
+    {{ form.location_two }}
+  </div>
+  <div>
+    <label for="status">Status:</label>
+    {{ form.status }}
+  </div>
+  <div>
+    <label for="datetime_field">You are going to meet again in :</label>
+    {{ form.datetime_field }}
+  </div>
+  <button type="submit">Save</button>
+</form>
 {% endblock %}
