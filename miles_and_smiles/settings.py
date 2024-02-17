@@ -24,11 +24,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'miles-and-smiles-03ded9dd0f57.herokuapp.com']
 
-# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-qmbdp8tkgn4.ws-eu108.gitpod.io'] # using locally mm/ do not touch
+CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-6e57bg4aiio.ws-eu108.gitpod.io'] # using locally mm/ do not touch
 
 
 # Application definition
@@ -161,6 +161,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
