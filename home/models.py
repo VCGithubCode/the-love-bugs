@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser
 
-class CustomUser(AbstractUser):
+class Profile(models.Model):
 
     STATUS_CHOICES = [
         ('option1', 'Situationship'),
@@ -13,7 +12,6 @@ class CustomUser(AbstractUser):
     
     name_one = models.CharField(max_length=30, blank=True, null=True)
     name_two = models.CharField(max_length=30, blank=True, null=True)
+    location_one = models.CharField(max_length=100, blank=True)
+    location_two = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, blank=True, null=True)
-
-    class Meta:
-        abstract = True
