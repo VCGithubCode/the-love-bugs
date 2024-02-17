@@ -15,7 +15,6 @@ def index(request):
 #     return render(request, 'home/profile.html')
 
 
-
 def profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST)
@@ -25,3 +24,7 @@ def profile(request):
     else:
         form = ProfileForm()
     return render(request, 'home/profile.html', {'form': form})
+
+
+def userProfile(request):
+    return render(request, 'home/users_profile.html')
