@@ -9,8 +9,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +29,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '*', '8000-vcgithubcod-thelovebugs-q43umjyfc9q.ws-eu108.gitpod.io', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-6e57bg4aiio.ws-eu108.gitpod.io']
 
+
 # CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-qmbdp8tkgn4.ws-eu108.gitpod.io'] # using locally mm/ do not touch
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,7 +58,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'miles_and_smiles.urls'
@@ -85,7 +85,7 @@ AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
-    # `allauth` specific authentication methods, such as login by e-mail
+    # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
@@ -109,6 +109,7 @@ WSGI_APPLICATION = 'miles_and_smiles.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -117,10 +118,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 
 
 
@@ -161,9 +161,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -172,4 +170,3 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# AUTH_USER_MODEL = 'home.CustomUser' # do not delete
