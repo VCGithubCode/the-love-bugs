@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ProfileForm
 from .models import Profile
+from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -50,6 +51,8 @@ def profile(request):
     return render(request, 'home/profile.html', {'form': form})
 
 
+
+
 @login_required
 def edit_profile(request):
     try:
@@ -66,6 +69,18 @@ def edit_profile(request):
         form = ProfileForm(instance=profile)
 
     return render(request, 'home/edit_profile.html', {'form': form})
+
+
+@login_required
+def delete_profile(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(user=request.user)
+        profile.delete()
+        request.user.delete()
+        logout(request)
+        return redirect('home')
+    else:
+        return render(request, 'home/delete_profile_confirmation.html')
 
 
 
