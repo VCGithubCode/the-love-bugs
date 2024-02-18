@@ -1,14 +1,19 @@
 
-  body {
-    min-height: 100vh;
+body {
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    margin: 0; /* Remove default margin */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    background-color: aliceblue;
+    flex-direction: column;
+  }
+  
+.contact-form {
+    margin-bottom: 250px;
+    padding-top: 200px;
 }
-
-
+/* .move-card-down {
+    margin-top: 50px;
+}
+ */
 
 /* .text-blk {
 margin-top: 0px;
