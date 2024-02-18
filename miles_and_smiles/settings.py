@@ -24,12 +24,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = ['miles-and-smiles-03ded9dd0f57.herokuapp.com', '*']
+ALLOWED_HOSTS = ['*', 'miles-and-smiles-03ded9dd0f57.herokuapp.com']
 
-# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-6e57bg4aiio.ws-eu108.gitpod.io'] # using locally mm/ do not touch
-
+# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-qmbdp8tkgn4.ws-eu108.gitpod.io'] # using locally mm/ do not touch
 
 
 # Application definition
@@ -57,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'miles_and_smiles.urls'
@@ -162,7 +161,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
