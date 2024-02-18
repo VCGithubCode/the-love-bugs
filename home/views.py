@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import ProfileForm
 from .models import Profile
 from django.contrib.auth.decorators import login_required
-from allauth.account.views import SignupView
 
 # Create your views here.
 
@@ -49,6 +48,24 @@ def profile(request):
     else:
         form = ProfileForm()
     return render(request, 'home/profile.html', {'form': form})
+
+
+@login_required
+def edit_profile(request):
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except Profile.DoesNotExist:
+        return redirect('profile')
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile_view')
+    else:
+        form = ProfileForm(instance=profile)
+
+    return render(request, 'home/edit_profile.html', {'form': form})
 
 
 
