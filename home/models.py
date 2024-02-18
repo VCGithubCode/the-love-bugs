@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
 
     STATUS_CHOICES = [
-        ('option1', 'Situationship'),
-        ('option2', 'Officially together'),
-        ('option3', 'Engaged'),
-        ('option4', 'Married'),
+        ('Situationship', 'Situationship'),
+        ('Officially together', 'Officially together'),
+        ('Engaged', 'Engaged'),
+        ('Married', 'Married'),
     ]
     
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
