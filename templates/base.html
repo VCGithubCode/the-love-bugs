@@ -2,7 +2,8 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
 
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +12,9 @@
     {% endblock %}
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
         <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
 
     {% endblock %}
@@ -20,108 +23,130 @@
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
 
     <title>Miles and Smiles {% block extra_title %}{% endblock %}</title>
-  </head>
+</head>
 
 
-  <body class="d-flex flex-column min-vh-100">
-    <header class="container-fluid fixed-top">
-      {% block page_header %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="{% url 'home' %}">Miles And Smiles</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item {% if active_page == 'home' %}active{% endif %}">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-              </li>
-            
-              {% if user.is_authenticated %}
-              <li class="nav-item {% if active_page == 'profile' %}active{% endif %}">
-                <a class="nav-link mx-2" href="{% url 'profile' %}">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2 {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Sign Out</a>
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link mx-2 {% if active_page == 'register' %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2 {% if active_page == 'login' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
-              </li>
-              {% endif %}
+<body class="d-flex flex-column min-vh-100">
+<header class="container-fluid fixed-top">
+    {% block page_header %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="{% url 'home' %}">Miles And Smiles</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Adjusted alignment using ml-auto for right alignment -->
+                    <li class="nav-item {% if active_page == 'home' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
 
-              <li class="nav-item {% if active_page == 'about' %}active{% endif %}">
-                <a class="nav-link mx-2" href="{% url 'about' %}">About</a>
-              </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item {% if active_page == 'profile' %}active{% endif %}">
+                        <a class="nav-link mx-2" href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 {% if request.path == logout_url %}active{% endif %}"
+                           href="{% url 'account_logout' %}">Sign Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 {% if active_page == 'register' %}active{% endif %}"
+                           href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 {% if active_page == 'login' %}active{% endif %}"
+                           href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
 
-              <li class="nav-item {% if active_page == 'contact' %}active{% endif %}">
-                <a class="nav-link mx-2" href="{% url 'contact' %}">contact Us</a>
-              </li>
+                    <li class="nav-item {% if active_page == 'about' %}active{% endif %}">
+                        <a class="nav-link mx-2" href="{% url 'about' %}">About</a>
+                    </li>
 
-              
-            </ul>
-          </div>
+                    <li class="nav-item {% if active_page == 'contact' %}active{% endif %}">
+                        <a class="nav-link mx-2" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+
+
+                </ul>
+            </div>
         </nav>
-      {% endblock %}
-    </header>
-  
-    <!-- Wrap your content in a main container -->
-    <main class="container">
-      {% block content %}
-        <!-- Your existing content here -->
-      {% endblock %}
-    </main>
-  
+    {% endblock %}
+</header>
 
+<!-- Wrap your content in a main container -->
+<main class="container mt-5">
+    {% block content %}
+    <!-- Your existing content here -->
+    {% endblock %}
+</main>
 
+<footer class="bg-body-tertiary text-center fixed-bottom">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a
+            data-mdb-ripple-init
+                class="btn text-white btn-floating m-1"
+                style="background-color: #3b5998;"
+                href="#!"
+                role="button"
+                ><i class="fab fa-facebook-f"></i
+            ></a>
 
+            <!-- Twitter -->
+            <a
+                data-mdb-ripple-init
+                class="btn text-white btn-floating m-1"
+                style="background-color: #55acee;"
+                href="#!"
+                role="button"
+                ><i class="fab fa-twitter"></i
+            ></a>
 
+            <!-- Google -->
 
-    <footer id="footer">
-      <div class="card text-center" id="footer-content">
-          <div class="card-header">
-              <p>Make a call or Send a message </p>
-  
-              <span class="card-body">
-                  <a href="https://web.whatsapp.com/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                          height="16" fill="red" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                          <path
-                              d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                      </svg></a>
-              </span>
-              <span class="card-body">
-                  <a href="https://skype.com/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                          height="16" fill="red" class="bi bi-skype" viewBox="0 0 16 16">
-                          <path
-                              d="M4.671 0c.88 0 1.733.247 2.468.702a7.42 7.42 0 0 1 6.02 2.118 7.37 7.37 0 0 1 2.167 5.215q0 .517-.072 1.026a4.66 4.66 0 0 1 .6 2.281 4.64 4.64 0 0 1-1.37 3.294A4.67 4.67 0 0 1 11.18 16c-.84 0-1.658-.226-2.37-.644a7.42 7.42 0 0 1-6.114-2.107A7.37 7.37 0 0 1 .529 8.035q0-.545.08-1.081a4.644 4.644 0 0 1 .76-5.59A4.68 4.68 0 0 1 4.67 0zm.447 7.01c.18.309.43.572.729.769a7 7 0 0 0 1.257.653q.737.308 1.145.523c.229.112.437.264.615.448.135.142.21.331.21.528a.87.87 0 0 1-.335.723c-.291.196-.64.289-.99.264a2.6 2.6 0 0 1-1.048-.206 11 11 0 0 1-.532-.253 1.3 1.3 0 0 0-.587-.15.72.72 0 0 0-.501.176.63.63 0 0 0-.195.491.8.8 0 0 0 .148.482 1.2 1.2 0 0 0 .456.354 5.1 5.1 0 0 0 2.212.419 4.6 4.6 0 0 0 1.624-.265 2.3 2.3 0 0 0 1.08-.801c.267-.39.402-.855.386-1.327a2.1 2.1 0 0 0-.279-1.101 2.5 2.5 0 0 0-.772-.792A7 7 0 0 0 8.486 7.3a1 1 0 0 0-.145-.058 18 18 0 0 1-1.013-.447 1.8 1.8 0 0 1-.54-.387.73.73 0 0 1-.2-.508.8.8 0 0 1 .385-.723 1.76 1.76 0 0 1 .968-.247c.26-.003.52.03.772.096q.412.119.802.293c.105.049.22.075.336.076a.6.6 0 0 0 .453-.19.7.7 0 0 0 .18-.496.72.72 0 0 0-.17-.476 1.4 1.4 0 0 0-.556-.354 3.7 3.7 0 0 0-.708-.183 6 6 0 0 0-1.022-.078 4.5 4.5 0 0 0-1.536.258 2.7 2.7 0 0 0-1.174.784 1.9 1.9 0 0 0-.45 1.287c-.01.37.076.736.25 1.063" />
-                      </svg></a>
-              </span>
-              <span class="card-body">
-                  <a href="https://www.messenger.com/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                          height="16" fill="red" class="bi bi-messenger" viewBox="0 0 16 16">
-                          <path
-                              d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z" />
-                      </svg></a>
-              </span>
-  
-              <div class="card-footer text-body-secondary">
-                  <a href="#">About Us</a>
-              </div>
-          </div>
-      </div>
-  </footer>
-  </body>
-  </html>
+            <!-- Instagram -->
+            <a
+                data-mdb-ripple-init
+                class="btn text-white btn-floating m-1"
+                style="background-color: #ac2bac;"
+                href="#!"
+                role="button"
+                ><i class="fab fa-instagram"></i
+            ></a>
 
+           
+
+            </section>
+            <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2020 Copyright:
+                <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+            </footer>
+            </body>
+            </html>

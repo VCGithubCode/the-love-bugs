@@ -1,18 +1,15 @@
-Personal style added to application body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+
+body {
+  min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column;
 }
 
-main {
-	flex: 1;
-}
 
-footer {
-	margin-top: auto;
-}
-
-/* home */
+/* move this to somehere telse
+ */
+/* home
 .home-container {
   margin: auto;
   width: 100%;
@@ -50,7 +47,7 @@ footer {
 } */
 
 /* Sign Up */
-.form-card {
+/* .form-card {
   background-color: rgb(228, 212, 192);
 }
 .form-container {
@@ -120,4 +117,4 @@ footer {
   color: white;
   font-size: 18px;
   text-align: center;
-}
+} */ 

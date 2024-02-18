@@ -4,14 +4,22 @@
 
 {% block content %}
     {% if profile %}
-        <h1>User Profile</h1>
-        <p>Name One: {{ profile.name_one }}</p>
-        <p>Name Two: {{ profile.name_two }}</p>
-        <p>Location One: {{ profile.location_one }}</p>
-        <p>Location Two: {{ profile.location_two }}</p>
-        <p>Status: {{ profile.status }}</p>
-        <p>Status: {{ profile.datetime_field }}</p>
+        <div class="container mt-4">
+            <h1>User Profile</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Name One:</strong> {{ profile.name_one }}</p>
+                    <p><strong>Name Two:</strong> {{ profile.name_two }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Location One:</strong> {{ profile.location_one }}</p>
+                    <p><strong>Location Two:</strong> {{ profile.location_two }}</p>
+                </div>
+            </div>
+            <p class="mt-3"><strong>Status:</strong> {{ profile.status }}</p>
+            <p><strong>Date and Time:</strong> {{ profile.datetime_field }}</p>
+        </div>
     {% else %}
-        <p>User profile not found.</p>
+        <p class="container mt-4">User profile not found.</p>
     {% endif %}
 {% endblock %}
