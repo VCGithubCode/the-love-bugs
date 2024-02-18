@@ -26,9 +26,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'miles-and-smiles-03ded9dd0f57.herokuapp.com']
+ALLOWED_HOSTS = ['miles-and-smiles-03ded9dd0f57.herokuapp.com', '*']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-6e57bg4aiio.ws-eu108.gitpod.io'] # using locally mm/ do not touch
+# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-6e57bg4aiio.ws-eu108.gitpod.io'] # using locally mm/ do not touch
+
+SECURE_SSL_REDIRECT = True
+
 
 
 # Application definition
