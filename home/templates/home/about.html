@@ -14,83 +14,113 @@
 
 {% block content %}
 <div class="container mt-5 mb-6 text-center">
-  <h1>Meet the team</h1>
+  <h1 class="text-danger section-title h1-responsive font-weight-bold text-center my-4">Meet our team</h1><div class="spinner-grow text-danger" role="status">
+    <span class="sr-only">Loading...</span><div class="spinner-grow text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div><div class="spinner-grow text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+  </div>
 </div>
 
 <div class="container mt-5">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 move-card-down">
     <!-- Team member 1 -->
     <div class="col">
-      <div class="card">
+      <div class="card border-0">
         <!-- Card content for team member 1 -->
-        <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+        <img src="{% static '/images/fernando.jpg' %}" class="card-img-top rounded-circle img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Name 1</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore repellat...</p>
+          <h5 class="card-title text-center">Fernando Gonçalves</h5>
+          <p class="card-text text-center">Full Stack Software Developer</p>
+          <div class="card-body text-center">
+            <a href="https://github.com/Goncalves95" class="card-link text-danger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/fernando-goncalves2202/" class="card-link text-danger" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Team member 2 -->
     <div class="col">
-      <div class="card">
+      <div class="card border-0">
         <!-- Card content for team member 2 -->
-        <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+        <img src="{% static '/images/vc_githubprofile.webp' %}" class="card-img-top rounded-circle img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Name 2</h5>
-          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates tempora ut...</p>
+          <h5 class="card-title text-center">Vernell</h5>
+          <p class="card-text text-center">Full Stack Software Developer</p>
+          <div class="card-body text-center">
+            <a href="https://github.com/vcgithubcode" class="card-link text-danger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/vcgithubcode" class="card-link text-danger" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Team member 3 -->
     <div class="col">
-      <div class="card">
+      <div class="card border-0">
         <!-- Card content for team member 3 -->
-        <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+        <img src="{% static '/images/michelle.png' %}" class="card-img-top rounded-circle img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Name 3</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aperiam recusandae...</p>
+          <h5 class="card-title text-center">Michelle Mattera</h5>
+          <p class="card-text text-center">Full Stack Software Developer</p>
+          <div class="card-body text-center">
+            <a href="https://github.com/michmattera" class="card-link text-danger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/michelle-mattera-a5283019b/" class="card-link text-danger" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Repeat the structure for additional team members -->
     <!-- Team member 4 -->
     <div class="col">
-      <div class="card">
+      <div class="card border-0">
         <!-- Card content for team member 3 -->
-        <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+        <img src="{% static '/images/yousef.png' %}" class="card-img-top rounded-circle img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Name 3</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aperiam recusandae...</p>
+          <h5 class="card-title text-center">Yousef Al-Mesaeed</h5>
+          <p class="card-text text-center">Full Stack Software Developer</p>
+          <div class="card-body text-center">
+            <a href="https://github.com/yousefalm1" class="card-link text-danger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/yousefalm1" class="card-link text-danger" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Team member 5 -->
     <div class="col">
-      <div class="card">
+      <div class="card border-0">
         <!-- Card content for team member 3 -->
-        <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+        <img src="{% static '/images/sam.png' %}" class="card-img-top rounded-circle img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Name 3</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aperiam recusandae...</p>
+          <h5 class="card-title text-center">Sam O'Brien-Olinger</h5>
+          <p class="card-text text-center">Full Stack Software Developer</p>
+          <div class="card-body text-center">
+            <a href="https://www.linkedin.com/in/sam-o-brien-olinger-b658283a/" class="card-link text-danger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/SamOBrienOlinger" class="card-link text-danger" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Team member 6 -->
     <div class="col">
-      <div class="card">
-        <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card border-0">
+        <img src="{% static '/images/bekry.png' %}" class="card-img-top rounded-circle img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Name 3</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aperiam recusandae...</p>
+          <h5 class="card-title text-center">Bekry</h5>
+          <p class="card-text text-center">Full Stack Software Developer</p>
+          <div class="card-body text-center">
+            <a href="https://github.com/bky201" class="card-link text-danger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/bky201" class="card-link text-danger" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="https://kit.fontawesome.com/049d55f482.js" crossorigin="anonymous"></script>
 </div>
 
 {% endblock %}
