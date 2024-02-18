@@ -11,8 +11,18 @@
 
 {% block content %}
 
-
-
+<h1>All Users' Locations</h1>
+<ul>
+    {% for profile in profiles %}
+    <li>
+        <strong>User:</strong> {{ profile.user.username }}<br>
+        <strong>Location One:</strong> {{ profile.location_one }}<br>
+        <strong>Location Two:</strong> {{ profile.location_two }}<br>
+        <strong>Status:</strong> {{ profile.status }}<br>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
 
 
 
