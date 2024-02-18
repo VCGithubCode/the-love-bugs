@@ -21,7 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
+AUTOCORRECT_API_KEY = os.environ.get('AUTOCORRECT_API_KEY')
+GEOLOCATE_API_KEY = os.environ.get('GEOLOCATE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -30,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['miles-and-smiles-03ded9dd0f57.herokuapp.com', '*']
 
-# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-2alpoypk45k.ws-eu108.gitpod.io'] # using locally mm/ do not touch
+# CSRF_TRUSTED_ORIGINS = ['https://8000-vcgithubcod-thelovebugs-bdvoq6z26rx.ws-eu108.gitpod.io'] # using locally mm/ do not touch
 
 
 # Application definition

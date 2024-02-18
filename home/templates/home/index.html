@@ -1,69 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 
-
-{% block extra_js %}
-    <script src="{% static 'home/js/script.js' %}"></script>   
+{% block extra_css %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { width: 100%; height: 500px; }
+    </style>
 {% endblock %}
-
-
-{% block page_header %}
-{% with active_page='home' %}
-{{ block.super }}
-{% endwith %}
-{% endblock %}
-
 
 {% block content %}
 
-<h1>All Users' Locations</h1>
-<ul>
-    {% for profile in profiles %}
-    <li>
-        <strong>User:</strong> {{ profile.user.username }}<br>
-        <strong>Location One:</strong> {{ profile.location_one }}<br>
-        <strong>Location Two:</strong> {{ profile.location_two }}<br>
-        <strong>Status:</strong> {{ profile.status }}<br>
-        <hr>
-    </li>
-    {% endfor %}
-</ul>
+<div id="map" style="width: 100%; height: 500px;"></div>
+<div id="countdownTimer"></div>
+<form id="locationsForm">
+  My Location:<br> <input type="text" id="location_one" name="location_one"><br>
+  Partner's Location:<br> <input type="text" id="location_two" name="location_two"><br>
+  Date of Meeting:<br> <input type="datetime-local" id="datetime_field" name="datetime_field"><br>
+  <input type="submit" value="Submit">
+</form>
 
+{% endblock %}
 
-
-
-<h1 class="display-4 text-success"> It Works </h1>
-<div class="row home-container">
-  <div class="col-sm-4 icons-container">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">Your distance location</h5>
-        <a href="#">
-          <img src="{% static '/images/earth.svg' %}" alt="map" class="icons" loading="lazy" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">Buy a Gift to yuor love one.</h5>
-        <a href="#">
-          <img src="{% static '/images/giftbox.svg' %}" alt="time" class="gift-icon" loading="lazy" />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4 icons-container">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">Count down</h5>
-        <a href="#">
-          <img src="{% static '/images/time.svg' %}" alt="time" class="icons" loading="lazy" />
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
+{% block extra_js %}
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{% static 'home/js/script.js' %}"></script> 
 {% endblock %}
