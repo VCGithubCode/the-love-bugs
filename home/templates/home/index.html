@@ -3,14 +3,46 @@
 
 
 {% block page_header %}
-  {% with active_page='home' %}
-    {{ block.super }}
-  {% endwith %}
+{% with active_page='home' %}
+{{ block.super }}
+{% endwith %}
 {% endblock %}
 
 
 {% block content %}
 
 <h1 class="display-4 text-success"> It Works </h1>
+<div class="row home-container">
+  <div class="col-sm-4 icons-container">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Your distance location</h5>
+        <a href="#">
+          <img src="{% static '/images/earth.svg' %}" alt="map" class="icons" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Buy a Gift to yuor love one.</h5>
+        <a href="#">
+          <img src="{% static '/images/giftbox.svg' %}" alt="time" class="gift-icon" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 icons-container">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Count down</h5>
+        <a href="#">
+          <img src="{% static '/images/time.svg' %}" alt="time" class="icons" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-{% endblock %} 
+{% endblock %}
