@@ -1,3 +1,4 @@
+
 body {
   min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
   margin: 0; /* Remove default margin */
@@ -5,3 +6,8 @@ body {
   flex-direction: column;
 }
 
+
+.profile-container {
+  margin-top: 19rem; /* Adjust the top margin as needed */
+  margin-bottom: 14rem; /* Adjust the bottom margin as needed */
+}

@@ -4,3 +4,8 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .contact-form {
+    margin-bottom: 260px;
+    padding-top: 200px;
+}

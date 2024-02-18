@@ -8,29 +8,51 @@
 
 
 {% block content %}
-    {% if profile %}
-        <div class="container mt-4">
-            <h1>User Profile</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <p><strong>Name One:</strong> {{ profile.name_one }}</p>
-                    <p><strong>Name Two:</strong> {{ profile.name_two }}</p>
-                </div>
-                <div class="col-md-6">
-                    <p><strong>Location One:</strong> {{ profile.location_one }}</p>
-                    <p><strong>Location Two:</strong> {{ profile.location_two }}</p>
-                </div>
+
+{% if profile %}
+    <div class= "container profile-container">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h1 class="mb-0">User Profile</h1>
             </div>
-            <p class="mt-3"><strong>Status:</strong> {{ profile.status }}</p>
-            <p><strong>Date and Time:</strong> {{ profile.datetime_field }}</p>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <dl class="row">
+                            <dt class="col-sm-4"><strong>Name One:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.name_one }}</dd>
+
+                            <dt class="col-sm-4"><strong>Name Two:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.name_two }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl class="row">
+                            <dt class="col-sm-4"><strong>Location One:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.location_one }}</dd>
+
+                            <dt class="col-sm-4"><strong>Location Two:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.location_two }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <p class="mt-3"><strong>Status:</strong> {{ profile.status }}</p>
+                <p><strong>When you guys will meet:</strong> {{ profile.datetime_field }}</p>
+            </div>
         </div>
-        <div>
-            <a href="{% url 'edit_profile' %}">Edit</a>
+        <div class="mt-4">
+            <a href="{% url 'edit_profile' %}" class="btn btn-warning mr-2">Edit Profile</a>
+            <a href="{% url 'delete_profile' %}" class="btn btn-danger">Delete Account</a>
         </div>
-        <div>
-            <a href="{% url 'delete_profile' %}">Delete account</a>
+    </div>
+{% else %}
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-warning" role="alert">
+            User profile not found.
         </div>
-    {% else %}
-        <p class="container mt-4">User profile not found.</p>
-    {% endif %}
+    </div>
+{% endif %}
+
+
+
 {% endblock %}
