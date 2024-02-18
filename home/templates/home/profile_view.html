@@ -27,6 +27,9 @@
         <div>
             <a href="{% url 'edit_profile' %}">Edit</a>
         </div>
+        <div>
+            <a href="{% url 'delete_profile' %}">Delete account</a>
+        </div>
     {% else %}
         <p class="container mt-4">User profile not found.</p>
     {% endif %}
