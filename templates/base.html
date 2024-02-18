@@ -40,7 +40,7 @@
 </head>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100">   
 <header class="container-fluid fixed-top">
     {% block page_header %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -90,63 +90,30 @@
     {% endblock %}
 </header>
 
+
+
+
 <!-- Wrap your content in a main container -->
-<main class="container">
-    {% block content %}
-    <!-- Your existing content here -->
-    {% endblock %}
-</main>
+<div class="flex-grow-1">{%block content %} {% endblock %}</div>
 
-<footer class="bg-body-tertiary text-center fixed-bottom fixed-bottom-lg">
+
+
+<!-- Footer -->
+<footer class="bg-dark text-center   ">
   <!-- Grid container -->
-    <div class="container p-4 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-            <!-- Facebook -->
-            <a
-            data-mdb-ripple-init
-                class="btn text-white btn-floating m-1"
-                style="background-color: #3b5998;"
-                href="#!"
-                role="button"
-                ><i class="fab fa-facebook-f"></i
-            ></a>
+  <div class="container p-4 pb-0">
+  </div>
+  <!-- Grid container -->
 
-            <!-- Twitter -->
-            <a
-                data-mdb-ripple-init
-                class="btn text-white btn-floating m-1"
-                style="background-color: #55acee;"
-                href="#!"
-                role="button"
-                ><i class="fab fa-twitter"></i
-            ></a>
+  <!-- Copyright -->
+  <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-white" href="/">milesandsmiles.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
-            <!-- Google -->
 
-            <!-- Instagram -->
-            <a
-                data-mdb-ripple-init
-                class="btn text-white btn-floating m-1"
-                style="background-color: #ac2bac;"
-                href="#!"
-                role="button"
-                ><i class="fab fa-instagram"></i
-            ></a>
 
-           
-
-            </section>
-            <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2020 Copyright:
-                <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-            </footer>
-            </body>
-            </html>
+</body>
+</html>

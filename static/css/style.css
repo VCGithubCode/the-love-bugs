@@ -7,11 +7,9 @@ body {
 }
 
 
-@media (max-width: 767px) {
-  .fixed-bottom-lg {
-      position: relative !important;
-  }
-}
+/* about */
+
+
 
 /* move this to somehere telse
  */
