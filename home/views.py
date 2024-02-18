@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect
 from .forms import ProfileForm
 from .models import Profile
 from django.contrib.auth.decorators import login_required
+from allauth.account.views import SignupView
 
 # Create your views here.
+
 def index(request):
-    """ A view to return the index page """    
-    
-    return render(request, 'home/index.html')
+    profiles = Profile.objects.all()
+    return render(request, 'home/index.html', {'profiles': profiles})
 
 
 def contact(request):
@@ -22,6 +23,8 @@ def about(request):
 
     return render(request, 'home/about.html')
 
+
+
 def profile_view(request):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
@@ -33,7 +36,7 @@ def profile_view(request):
 
 @login_required
 def profile(request):
-    if request.user.profile:
+    if Profile.objects.filter(user=request.user).exists():
         return redirect('profile_view')
 
     if request.method == 'POST':
@@ -47,16 +50,6 @@ def profile(request):
         form = ProfileForm()
     return render(request, 'home/profile.html', {'form': form})
 
-# @login_required
-# def profile(request):
-#     if request.method == 'POST':
-#         form = ProfileForm(request.POST)
-#         if form.is_valid():
-#             profile = form.save(commit=False)
-#             profile.user = request.user
-#             profile.save()
-#             return redirect('profile_view')
-#     else:
-#         form = ProfileForm()
-#     return render(request, 'home/profile.html', {'form': form})
+
+
 
