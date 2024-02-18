@@ -1,0 +1,6 @@
+body {
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+  }

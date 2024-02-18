@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'home/css/about_contact.css' %}">
 {% endblock %}
-
 
 {% block page_header %}
 {% with active_page='about' %}
@@ -17,10 +14,65 @@
 
 {% block content %}
 
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static '/images/ava1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Name</h5>
+        <p class="card-text">About</p>
+      </div>
+    </div>
+  </div>
+  <!-- Repeat the above structure for each card you want to display -->
+</div>
 
-
-<!-- Fernando please add the code here ignore the nav and footer  -->
-<main>
+{% comment %} <main>
     <link rel="stylesheet" href="static/css/style_2.css">
     <div class="responsive-container-block outer-container">
         <div class="responsive-container-block inner-container">
@@ -161,7 +213,7 @@
         </div>
       </div>
 </main>
-<script src="https://kit.fontawesome.com/049d55f482.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/049d55f482.js" crossorigin="anonymous"></script> {% endcomment %}
 
 
 

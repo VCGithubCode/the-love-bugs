@@ -7,6 +7,12 @@ body {
 }
 
 
+@media (max-width: 767px) {
+  .fixed-bottom-lg {
+      position: relative !important;
+  }
+}
+
 /* move this to somehere telse
  */
 /* home
