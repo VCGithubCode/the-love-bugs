@@ -2,6 +2,11 @@
 {% load static %}
 
 
+{% block extra_js %}
+    <script src="{% static 'home/js/script.js' %}"></script>   
+{% endblock %}
+
+
 {% block page_header %}
 {% with active_page='home' %}
 {{ block.super }}
