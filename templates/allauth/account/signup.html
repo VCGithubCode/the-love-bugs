@@ -8,12 +8,9 @@
 {% block content %}
 <h1>{% trans "Sign Up" %}</h1>
 
-
-
-
 <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
+  <div class="col-sm-6 form-container">
+    <div class="card form-card">
       <div class="card-body">
         <p class="">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.
           {% endblocktrans %}</p>
@@ -28,18 +25,18 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body signup-image container">
+  <div class="col-sm-6 form-img-container">
+    <div class="card image-container">
+      <div class="card-body signup-image">
         <img src="{% static '/images/red-heart.png' %}" alt="map" class="img-fluid" loading="lazy" />
-        <div class="overlay-1">
-          <div class="text-1">Where is Your Love Located.</div>
+        <div class="overlay">
+          <div class="img-text">Where is Your Love Located.</div>
         </div>
       </div>
-      <div class="card-body signup-image container">
+      <div class="card-body signup-image">
         <img src="{% static '/images/heart-clock.png' %}" alt="map" class="img-fluid" loading="lazy" />
-        <div class="overlay-2">
-          <div class="text-2">When Your Going See Each Other.</div>
+        <div class="overlay">
+          <div class="img-text">When Your Going See Each Other.</div>
         </div>
       </div>
     </div>
