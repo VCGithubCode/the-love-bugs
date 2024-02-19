@@ -1,12 +1,12 @@
 <h1 align="center"><strong> :cupid: The Love Bugs :cupid: </strong></h1>
 
-<h1 align="center"><strong> :revolving_hearts: Miles and Smiles :revolving_hearts: </strong></h1>
+<h1 align="center"><strong> :revolving_hearts: Miles & Smiles :revolving_hearts: </strong></h1>
 
 # **Intro**
 
 Welcome to "Miles and Smiles"! This is more than just an app - it's a bridge to unite hearts separated by distance. If you're in a long-distance relationship, you know how challenging it can be to maintain connection and intimacy. That's why we created "Miles and Smiles", a tool designed especially for couples who want to feel closer, regardless of the distance that separates them. With intuitive and user-friendly features, we're here to turn every mile traveled into shared smiles. Explore all that "Miles and Smiles" has to offer and embark on this journey of long-distance love with confidence and joy.
 
-Link to deployed project [here]
+Live link: [Miles & Smiles](https://miles-and-smiles-03ded9dd0f57.herokuapp.com/)
 
 
 # Table Of Content
@@ -79,11 +79,28 @@ The target audience for "Miles and Smiles" is couples who are in long-distance r
 ## Design
 ### Colour Scheme
 ![Color Palette](staticfiles/images/readme_img/color_palette.png)
-### Fonts
+
 ### Wireframes
-#### Overview
-#### EPICS(Milestones)
-#### User Stories issues
+![Landing Page](staticfiles/images/readme_img/wireframes/1_landing_wire.png)
+![Sign Up](staticfiles/images/readme_img/wireframes/2_signup_wire.png)
+![Sign In](staticfiles/images/readme_img/wireframes/3_signin_wire.png)
+![Profile](staticfiles/images/readme_img/wireframes/4_profile_wire.png)
+![Countdown](staticfiles/images/readme_img/wireframes/5_countdown_wire.png)
+![Compass](staticfiles/images/readme_img/wireframes/6_compass_wire.png)
+![Cart](staticfiles/images/readme_img/wireframes/7_cart_wire.png)
+
+#### Mockups
+![1](staticfiles/images/readme_img/mockups/mockup1.png)<br>
+![2](staticfiles/images/readme_img/mockups/mockup2.png)<br>
+![3](staticfiles/images/readme_img/mockups/mockup3.png)
+
+#### EPICS(Milestones) / User Stories issues
+###[#45](https://github.com/VCGithubCode/the-love-bugs/issues/45)
+
+###[#44](https://github.com/VCGithubCode/the-love-bugs/issues/44)
+
+ ###[#34](https://github.com/VCGithubCode/the-love-bugs/issues/34)
+
 #### GitHub Projects
 
 ## Features
@@ -148,8 +165,9 @@ On this page, the user can create their profile with location and relationship d
 ![Delete Profile](staticfiles/images/readme_img/delet_profile.png)
 
 ## Future Features
-1. 
-2. 
+1. Countdown Page 
+2. Shopping gifts
+3. Localization pin
 
 ## Testing
 Testing documentation can be found [here.](./TESTING.md)
@@ -203,6 +221,9 @@ The following commands were used:
 - [CI Python Linter](https://pep8ci.herokuapp.com/) was used to check the Python code.
 
 ## **Deployment**
+
+Live link: [Miles & Smiles](https://miles-and-smiles-03ded9dd0f57.herokuapp.com/)
+
 ### Deployment Steps
 - Install Git and the Heroku CLI (Command Line Interface) on your local machine if you haven't already.
 - Navigate to your project's root directory using the command line.
@@ -257,7 +278,7 @@ The following commands were used:
 - [Font Awesome](https://fontawesome.com/) - Icons
 ### Code
 - [Bootstrap](https://getbootstrap.com/) - Responsive layout and styling
-### Acknowledgements
+
 ### Comments
 
 - Credits and thank you to our team ***The Love Bugs*** for great teamwork during the project and effective communication via our Slack channel chat and calls:
