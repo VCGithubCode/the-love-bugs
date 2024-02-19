@@ -96,9 +96,6 @@ def profile(request):
         form = ProfileForm()
     return render(request, 'home/profile.html', {'form': form})
 
-
-
-
 @login_required
 def edit_profile(request):
     try:
@@ -127,8 +124,3 @@ def delete_profile(request):
         return redirect('home')
     else:
         return render(request, 'home/delete_profile_confirmation.html')
-
-
-
-
-
