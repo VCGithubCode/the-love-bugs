@@ -1,12 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/profile_view.css' %}">
+{% endblock %}
+
+
 {% block content %}
-  <h1>Modify Profile</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Changes</button>
-    <a href="{% url 'profile_view' %}">Cancel</a>
-  </form>
+  <div class="container profile-container">
+    <div class="card">
+      <div class="card-header bg-danger text-white">
+        <h1 class="mb-0">Modify Profile</h1>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="row">
+            <div class="col-md-6">
+              <dl class="row">
+                <dt class="col-sm-4"><strong>{{ form.name_one.label_tag }}</strong></dt>
+                <dd class="col-sm-8">{{ form.name_one }}</dd>
+
+                <dt class="col-sm-4"><strong>{{ form.name_two.label_tag }}</strong></dt>
+                <dd class="col-sm-8">{{ form.name_two }}</dd>
+              </dl>
+            </div>
+            <div class="col-md-6">
+              <dl class="row">
+                <dt class="col-sm-4"><strong>{{ form.location_one.label_tag }}</strong></dt>
+                <dd class="col-sm-8">{{ form.location_one }}</dd>
+
+                <dt class="col-sm-4"><strong>{{ form.location_two.label_tag }}</strong></dt>
+                <dd class="col-sm-8">{{ form.location_two }}</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <strong>{{ form.status.label_tag }}</strong>
+            {{ form.status }}
+          </div>
+
+          <div class="form-group">
+            <strong>{{ form.datetime_field.label_tag }}</strong>
+            {{ form.datetime_field }}
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <a href="{% url 'profile_view' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endblock %}
