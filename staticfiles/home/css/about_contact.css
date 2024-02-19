@@ -1,0 +1,230 @@
+
+body {
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+/* .move-card-down {
+    margin-top: 50px;
+}
+ */
+
+/* .text-blk {
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+line-height: 25px;
+}
+
+.responsive-cell-block {
+min-height: 75px;
+}
+
+.responsive-container-block {
+min-height: 75px;
+height: fit-content;
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0px;
+margin-left: auto;
+justify-content: space-evenly;
+gap: 50px;
+}
+
+
+
+.outer-container {
+padding-top: 10px;
+padding-bottom: 10px;
+background-color: rgb(244, 252, 255);
+}
+
+.inner-container {
+max-width: 1320px;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+margin-right: auto;
+margin-bottom: 50px;
+margin-left: auto;
+}
+
+.section-head-text {
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+font-size: 35px;
+font-weight: 700;
+line-height: 48px;
+color: rgb(0, 135, 177);
+margin: 0 0 10px 0;
+}
+
+.section-subhead-text {
+font-size: 25px;
+color: rgb(244, 52, 52);
+line-height: 35px;
+max-width: 470px;
+text-align: center;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 60px;
+margin-left: 0px;
+}
+
+.img-wrapper {
+width: 90%;
+padding-bottom: 20px;
+}
+
+.team-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.social-media-links {
+width: 125px;
+display: flex;
+justify-content: space-evenly;
+text-decoration: none;
+}
+
+.fa-brands, .fab {
+    color: black;
+}
+
+.fa-brands:hover, .fab:hover {
+    border-radius: 50%;
+    background-color: red;
+} 
+
+.name {
+font-size: 25px;
+font-weight: 700;
+color: rgb(102, 102, 102);
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+}
+
+.position {
+font-size: 25px;
+font-weight: 700;
+text-align: center;
+color: rgb(0, 135, 177);
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 20px;
+}
+
+.team-img {
+width: 90%;
+height: 90%;
+border-radius: 50%;
+}
+
+.team-card-container {
+width: 280px;
+margin: 0 0 40px 0;
+}
+
+/*---------Contact Form ----------------*/
+/* 
+.contact {
+    background-image: url("../images/heart-3293531_1920.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.wrapper { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    max-width: 350px; 
+    width: 100%; 
+    background: #fff; 
+    padding: 25px; 
+    border-radius: 5px; 
+    box-shadow: 4px 4px 2px
+        rgba(254, 236, 164, 1); 
+} 
+  
+.wrapper h2 { 
+    text-align: center; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    color: #332902; 
+} 
+  
+.wrapper .input_field { 
+    margin-bottom: 10px; 
+} 
+  
+.wrapper 
+    .input_field 
+    input[type="text"], 
+.wrapper textarea { 
+    border: 1px solid #e0e0e0; 
+    width: 100%; 
+    padding: 10px; 
+} 
+  
+.wrapper textarea { 
+    resize: none; 
+    height: 80px; 
+} 
+  
+.wrapper .btn input[type="submit"] { 
+    border: 0px; 
+    margin-top: 15px; 
+    padding: 10px; 
+    text-align: center; 
+    width: 100%; 
+    background: #569a4d; 
+    color: #fcfbf7; 
+    text-transform: uppercase; 
+    letter-spacing: 5px; 
+    font-weight: bold; 
+    border-radius: 25px; 
+    cursor: pointer; 
+} 
+  
+#error_message { 
+    margin-bottom: 20px; 
+    background: #fe8b8e; 
+    padding: 0px; 
+    text-align: center; 
+    font-size: 14px; 
+    transition: all 0.5s ease; 
+} */
+
+
+
+  
+
+/*--------Responsive css --------*/
+/* 
+@media (max-width: 500px) {
+.outer-container {
+    padding: 10px 20px 10px 20px;
+}
+
+.section-head-text {
+    text-align: center;
+}
+}
+ */

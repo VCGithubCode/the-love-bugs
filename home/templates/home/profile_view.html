@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/profile_view.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if profile %}
+    <div class= "container profile-containe">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h1 class="mb-0">User Profile</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <dl class="row">
+                            <dt class="col-sm-4"><strong>Name One:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.name_one }}</dd>
+
+                            <dt class="col-sm-4"><strong>Name Two:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.name_two }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl class="row">
+                            <dt class="col-sm-4"><strong>Location One:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.location_one }}</dd>
+
+                            <dt class="col-sm-4"><strong>Location Two:</strong></dt>
+                            <dd class="col-sm-8">{{ profile.location_two }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <p class="mt-3"><strong>Status:</strong> {{ profile.status }}</p>
+                <p><strong>When you guys will meet:</strong> {{ profile.datetime_field }}</p>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="{% url 'edit_profile' %}" class="btn btn-warning mr-2">Edit Profile</a>
+            <a href="{% url 'delete_profile' %}" class="btn btn-danger">Delete Account</a>
+        </div>
+    </div>
+{% else %}
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-warning" role="alert">
+            User profile not found.
+        </div>
+    </div>
+{% endif %}
+
+
+
+{% endblock %}

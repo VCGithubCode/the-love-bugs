@@ -1,9 +1,9 @@
 {% load static %}
-{% load cloudinary %}
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
 
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,38 +12,110 @@
     {% endblock %}
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+
     {% endblock %}
 
     {% block extra_css %}
-        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_js %}
+      
     {% endblock %}
 
     <title>Miles and Smiles {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-    <header class="container-fluid fixed-top"></header>
+</head>
 
 
-    {% block page_header %}
-    {% endblock %}
 
-    {% block content %}
-    {% endblock %}
 
-    {% block postloadjs %}
-        <script src="{% static 'js/scripts.js' %}"></script>
-    {% endblock %}
 
-    
-  </body>
+<body class="d-flex flex-column min-vh-100">
+
+  <header class="container-fluid fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="{% url 'home' %}">Miles And Smiles</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <!-- Adjusted alignment using ml-auto for right alignment -->
+              <li class="nav-item {% if active_page == 'home' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              {% if user.is_authenticated %}
+              <li class="nav-item {% if active_page == 'profile' %}active{% endif %}">
+                  <a class="nav-link mx-2" href="{% url 'profile' %}">Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link mx-2 {% if request.path == logout_url %}active{% endif %}"
+                     href="{% url 'account_logout' %}">Sign Out</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                  <a class="nav-link mx-2 {% if active_page == 'register' %}active{% endif %}"
+                     href="{% url 'account_signup' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link mx-2 {% if active_page == 'login' %}active{% endif %}"
+                     href="{% url 'account_login' %}">Login</a>
+              </li>
+              {% endif %}
+
+              <li class="nav-item {% if active_page == 'about' %}active{% endif %}">
+                  <a class="nav-link mx-2" href="{% url 'about' %}">About</a>
+              </li>
+
+              <li class="nav-item {% if active_page == 'contact' %}active{% endif %}">
+                  <a class="nav-link mx-2" href="{% url 'contact' %}">Contact Us</a>
+              </li>
+
+
+          </ul>
+      </div>
+  </nav>
+  </header>
+
+  <!-- Wrap your content in a main container -->
+  <main class="container my-5 flex-fill">
+      {% block content %} {% endblock %}
+  </main>
+
+  <footer class="text-center text-lg-start bg-danger">
+      <div class="container d-flex justify-content-center py-3">
+            <!-- Social media buttons -->
+            <a href="https://github.com/VCGithubCode/the-love-bugs" class="card-link text-dark" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+            <a href="https://hackathon.codeinstitute.net/teams/404/" class="card-link text-dark" target="_blank"><i class="fa-solid fa-people-group fa-2x"></i></a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center text-black p-4" style="background-color: rgba(0, 0, 0, 0.0);">
+          © 2024 Copyright
+          <a class="text-black font-weight-bolder mb-3">The Love Bugs</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+  <script src="https://kit.fontawesome.com/049d55f482.js" crossorigin="anonymous"></script>
+
+</body>
+
 </html>
+

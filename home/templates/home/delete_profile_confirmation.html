@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/profile_view.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container profile-container">
+    <div class="card">
+      <div class="card-header bg-danger text-white">
+        <h1 class="mb-0">Delete Profile Confirmation</h1>
+      </div>
+      <div class="card-body">
+        <p class="lead">Are you sure you want to delete your profile and account?</p>
+
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-danger">Delete Account</button>
+            <a href="{% url 'profile_view' %}" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+  
