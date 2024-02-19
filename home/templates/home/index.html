@@ -9,23 +9,40 @@
 {% endblock %}
 
 {% block content %}
-<div id="map" style="width: 100%; height: 500px; margin-top:100px;"></div>
-<div id="countdownTimer"></div>
-<form id="locationsForm" class="mt-4">
-  <div class="form-group">
-    <label for="location_one">My Location:</label>
-    <input type="text" class="form-control" id="location_one" name="location_one">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div id="map" style="height: 250px; margin-top: 100px;"></div>
+      <img src="static/images/heart-clock.png" alt="heart-clock-icon">
+    </div>
+    <div class="col-md-6">
+      <div id="countdownTimer" style="height: 250px; margin-top: 100px; border: 2px solid red;"></div>
+      <img src="static/images/red-heart.png" alt="red-heart-globe">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="location_two">Partner's Location:</label>
-    <input type="text" class="form-control" id="location_two" name="location_two">
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <form id="locationsForm">
+        <div class="form-group">
+          <label for="location_one">My Location:</label>
+          <input type="text" class="form-control" id="location_one" name="location_one">
+        </div>
+        <div class="form-group">
+          <label for="location_two">Partner's Location:</label>
+          <input type="text" class="form-control" id="location_two" name="location_two">
+        </div>
+        <div class="form-group">
+          <label for="datetime_field">Date of Meeting:</label>
+          <input type="datetime-local" class="form-control" id="datetime_field" name="datetime_field">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="datetime_field">Date of Meeting:</label>
-    <input type="datetime-local" class="form-control" id="datetime_field" name="datetime_field">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+
 
 
 
