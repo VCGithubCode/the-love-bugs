@@ -9,6 +9,8 @@ class Profile(models.Model):
         ('Engaged', 'Engaged'),
         ('Married', 'Married'),
     ]
+
+   
     
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name_one = models.CharField(max_length=30, blank=True, null=True)

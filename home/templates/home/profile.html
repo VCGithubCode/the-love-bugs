@@ -13,37 +13,43 @@
 {% endblock %}
 
 {% block content %}
-<div class="container contact-form">
-  <h1 class="display-4 text-danger text-center"> Create your profile </h1>
-  <form method="post" class="mt-3">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="name_one" class="form-label">Name:</label>
-      {{ form.name_one }}
+<div class="container profile-form ">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg p-5">
+        <h1 class="display-4 text-danger text-center pb-3"> Create your profile </h1>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name_one" class="form-label">Your Name <span class="text-danger">*</span></label>
+            {{ form.name_one }}
+          </div>
+          <div class="form-group">
+            <label for="name_two" class="form-label">Partner's Name <span class="text-danger">*</span></label>
+            {{ form.name_two }}
+          </div>
+          <div class="form-group">
+            <label for="location_one" class="form-label">Your Location <span class="text-danger">*</span></label>
+            {{ form.location_one }}
+          </div>
+          <div class="form-group">
+            <label for="location_two" class="form-label">Partner's Location <span class="text-danger">*</span></label>
+            {{ form.location_two }}
+          </div>
+          <div class="form-group">
+            <label for="status" class="form-label">Status</label>
+            {{ form.status }}
+          </div>
+          <div class="form-group">
+            <label for="datetime_field" class="form-label">Next Meeting Date/Time <span class="text-danger">*</span></label>
+            {{ form.datetime_field }}
+          </div>
+          
+          
+          <button type="submit" class="btn btn-success">Save</button>
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="name_two" class="form-label">Partner name:</label>
-      {{ form.name_two }}
-    </div>
-    <div class="form-group">
-      <label for="location_one" class="form-label">Location:</label>
-      {{ form.location_one }}
-    </div>
-    <div class="form-group">
-      <label for="location_two" class="form-label">Partner location:</label>
-      {{ form.location_two }}
-    </div>
-    <div class="form-group">
-      <label for="status" class="form-label">Status:</label>
-      {{ form.status }}
-    </div>
-    <div class="form-group">
-      <label for="datetime_field" class="form-label">You are going to meet again in :</label>
-      {{ form.datetime_field }}
-    </div>
-    <button type="submit" class="btn btn-success">Save</button>
-  </form>
+  </div>
 </div>
-
-
 {% endblock %}
