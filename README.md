@@ -1,15 +1,10 @@
-WHERE IS THE BUTTON!?!?
+<h1 align="center"><strong> :cupid: The Love Bugs :cupid: </strong></h1>
 
-Cupid draw back your bow, and let your arrow flow. 
-Straight to my lover's heart for me, nobody but me!
+<h1 align="center"><strong> :revolving_hearts: Miles and Smiles :revolving_hearts: </strong></h1>
 
-- Sam Cooke...not this Sam! 
+# **Intro**
 
-Oh no I lost everything
-
-# Miles and Smiles
-
-Miles and Smiles is a user-friendly application that gives couples in long distance relationships another way to stay as connected as possible.
+Welcome to "Miles and Smiles"! This is more than just an app - it's a bridge to unite hearts separated by distance. If you're in a long-distance relationship, you know how challenging it can be to maintain connection and intimacy. That's why we created "Miles and Smiles", a tool designed especially for couples who want to feel closer, regardless of the distance that separates them. With intuitive and user-friendly features, we're here to turn every mile traveled into shared smiles. Explore all that "Miles and Smiles" has to offer and embark on this journey of long-distance love with confidence and joy.
 
 Link to deployed project [here]
 
@@ -54,6 +49,12 @@ Link to deployed project [here]
 
 ### User Stories
 
+###[#45](https://github.com/VCGithubCode/the-love-bugs/issues/45)
+
+###[#44](https://github.com/VCGithubCode/the-love-bugs/issues/44)
+
+ ###[#34](https://github.com/VCGithubCode/the-love-bugs/issues/34)
+
 #### Site-goals 
 * Provide a system to allow users to see a countdown based on their planned meeting date and their geo-location.
 * Allow users to create a profile to enter relationship details.
@@ -72,9 +73,12 @@ The Kanban board was created to keep track of project progression and issues ass
 * Interactive World Map with minimally invasive information details about couples relationships
 * Shopping cart for users that want to buy gifts
 
+#### Target Audience
+The target audience for "Miles and Smiles" is couples who are in long-distance relationships. This includes people of all ages who are separated by significant distances due to reasons such as work, studies or other circumstances. These couples are looking for ways to maintain a close connection, despite the physical distance, and are interested in tools that help them overcome the unique challenges faced in long-distance relationships. The app is especially suitable for those who want to feel closer to their partners, sharing special moments, planning future meetings and creating memories together, regardless of the distance that separates them.
 
 ## Design
 ### Colour Scheme
+![Color Palette](staticfiles/images/readme_img/color_palette.png)
 ### Fonts
 ### Wireframes
 #### Overview
@@ -84,8 +88,64 @@ The Kanban board was created to keep track of project progression and issues ass
 
 ## Features
 ### Navbar
+The navbar consists of:
+- App name,
+- Links: 
+    - Home (go to home page),
+    - Register (for the user to register in the app),
+    - Login (for the user to log in to their account), 
+    - About (where the user can see the team that developed the project), 
+    - Contact Us (form for the user to contact our team and ask for assistance or a question). 
+- Navbar without Login:
+![Navbar](staticfiles/images/readme_img/navbar_login.png)
+
+- Navbar with login:
+![Navbar1](staticfiles/images/readme_img/navbar1.png)
+
 ### Footer
+The footer consists of:
+- Two buttons: 
+    - The githube symbol that takes the user to the code source page on githube, 
+    - The group symbol that takes you to the team page.
+- Copyrights and the team name. 
+![Footer](staticfiles/images/readme_img/footer.png)
+
 ### Home
+The home page contains a map, and after logging in the user can see two points on the map (two locations). His location and his lover's location. 
+You can also find a form to enter this data.
+![Home](staticfiles/images/readme_img/home_page.png)
+
+### Sign Up Page
+On the Sign Up page you can use the application's login option.
+
+![Sign Up](staticfiles/images/readme_img/sign_up .png)
+### Sign In Page
+On the Sign in page, the user can log in to access their account.
+
+![Sign In](staticfiles/images/readme_img/sign_in.png)
+### About
+On the About page, the user can find the team that developed the app, with some individual links for each social network.
+
+![About](staticfiles/images/readme_img/team_page.png)
+### Contact Us
+On the Contact us page, the user can fill out a form to get in touch with the team for any questions or support needed while using the app.
+
+![Constact Us](staticfiles/images/readme_img/contactus_form.png)
+
+### User Profile 
+Here the user can delete their personal profile or edit it.
+![User Profile](staticfiles/images/readme_img/user_profile.png)
+
+### Sign Out
+Message to confirm whether the user wants to Sign Out.
+![Sign Out](staticfiles/images/readme_img/sign_out.png)
+
+### Creat Profile
+On this page, the user can create their profile with location and relationship data.
+![Creat Profile](staticfiles/images/readme_img/creat_profile.png)
+
+### Delete Profile 
+![Delete Profile](staticfiles/images/readme_img/delet_profile.png)
 
 ## Future Features
 1. 
@@ -98,6 +158,7 @@ Testing documentation can be found [here.](./TESTING.md)
 
 |Bug|Status|
 | ---| ---|
+|[BUG: Bug with Google API](staticfiles/images/readme_img/google_api_error.png)|Open|
 |[BUG: bug description](link)|Open|
 
 ### Version control
@@ -121,12 +182,14 @@ The following commands were used:
 
 ## Technologies And Languages
 ### Languages Used
-- HTML
-- CSS
-- JavaScript
-- Python
-- Bootstrap
-- Django
+- **HTML 5**
+- **CSS 3**
+- **Javascript**
+- **Python**
+- [Bootstrap](https://getbootstrap.com/) - Responsive layout and styling
+- **Django**
+- [GitHub](https://github.com) - Version control and deployment
+- [Font Awesome](https://fontawesome.com/) - Icons
 
 ### Technologies and programs
 - [GitHub](https://github.com/) is the hosting site used to store the code for the website.
@@ -139,8 +202,40 @@ The following commands were used:
 - [Js Hint](https://jshint.com/) was used to validate the JavaScript code.
 - [CI Python Linter](https://pep8ci.herokuapp.com/) was used to check the Python code.
 
-## Deployment
+## **Deployment**
 ### Deployment Steps
+- Install Git and the Heroku CLI (Command Line Interface) on your local machine if you haven't already.
+- Navigate to your project's root directory using the command line.
+- Initialize a local Git repository and commit your application code to it:
+
+    $ cd example-app
+    $ git init
+    $ git add .
+    $ git commit -m "My first commit"
+
+    Created initial commit 5df2d09: My first commit
+    44 files changed, 8393 insertions(+), 0 deletions(-)
+    create mode 100644 README
+    create mode 100644 Procfile
+    create mode 100644 app/controllers/source_file
+
+- Create a new Heroku app with the heroku create command (use -a to specify an app name):
+
+    $ heroku create -a example-app
+    Creating app... done, ⬢ example-app
+
+- Verify the Heroku remote has been set for your local repository:
+
+    $ git remote -v
+
+- Deploy your app to Heroku using the git push heroku main command (or git push heroku <branch-name>:main for a non-main branch):
+
+    $ git push heroku main
+    Initializing repository, done.
+    updating 'refs/heads/main'
+
+- You can confirm the deployment by running heroku ps:scale web=1 and heroku open.
+
 
 ### Creating a fork
 1. Navigate to the [repository](https://github.com/VCGithubCode/the-love-bugs)
@@ -158,13 +253,17 @@ The following commands were used:
 
 ## Credits
 ### Media
+- [Openart.ai](https://openart.ai/) - Images to Sign pages
+- [Font Awesome](https://fontawesome.com/) - Icons
 ### Code
+- [Bootstrap](https://getbootstrap.com/) - Responsive layout and styling
 ### Acknowledgements
 ### Comments
 
-[Michelle](https://github.com/michmattera) <br>
-[Sam](https://github.com/SamOBrienOlinger)<br>
-[Yousef](https://github.com/yousefalm1)<br>
-[Bekry](https://github.com/bky201)<br>
-[Fernando](https://github.com/Goncalves95)<br>
-[Vernell](https://github.com/VCGithubCode)
+- Credits and thank you to our team ***The Love Bugs*** for great teamwork during the project and effective communication via our Slack channel chat and calls:
+- [Michelle](https://github.com/michmattera) <br>
+- [Sam](https://github.com/SamOBrienOlinger)<br>
+- [Yousef](https://github.com/yousefalm1)<br>
+- [Bekry](https://github.com/bky201)<br>
+- [Fernando](https://github.com/Goncalves95)<br>
+- [Vernell](https://github.com/VCGithubCode)
